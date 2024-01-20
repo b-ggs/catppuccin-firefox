@@ -5,7 +5,7 @@
     "license": "MIT",
     "dependencies": {
         "@babel/runtime": "^7.18.9",
-        "@catppuccin/palette": "^0.1.5",
+        "@catppuccin/palette": "git+https://github.com/b-ggs/catppuccin-palette.git#dist",
         "json-url": "^3.0.0",
         "jszip": "^3.10.1"
     },

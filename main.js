@@ -1,5 +1,5 @@
 import JsonUrl from "json-url";
-import { variants } from "@catppuccin/palette";
+import { flavors } from "@catppuccin/palette";
 
 const accents = [
     "rosewater",
@@ -37,13 +37,15 @@ const capitalize = (s) => {
 };
 
 (async () => {
-    for (const flavour of Object.keys(variants)) {
+    for (const flavour of Object.keys(flavors)) {
         console.log(`<details>\n<summary>${capitalize(flavour)}</summary>\n`);
         const lib = {};
 
-        Object.keys(variants[flavour]).forEach((colour) => {
-            const hex = variants[flavour][colour]["hex"];
-            const { r, g, b } = hexToRgb(hex);
+        Object.keys(flavors[flavour]["colors"]).forEach((colour) => {
+            const r = flavors[flavour]["colors"][colour]["rgb"]["r"];
+            const g = flavors[flavour]["colors"][colour]["rgb"]["g"];
+            const b = flavors[flavour]["colors"][colour]["rgb"]["b"];
+
             lib[colour] = {
                 r,
                 g,
